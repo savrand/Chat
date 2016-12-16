@@ -1,0 +1,5 @@
+.messages.border-radius-base.center-block
+  = form_for [Message.new], html: {class: "message_form form-group"} do |form|
+    .form-group
+      = form.text_area :content, class: "message_content form-control"
+      = form.submit "Post", class: "message_button btn btn-primary btn-block"

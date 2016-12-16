@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* header */
+
+header {
+  height: 40px;
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+      li{
+        color: red;
+      }
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+body {
+  padding-top: 60px;
+}
+
+h1 {
+  padding-left: 30px;
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: left;
+  color: forestgreen;
+}
+
+.pictures {
+  padding-left: 50px;
+  .pagination {
+    font-size: 2em;
+  }
+}
+.user_mail {
+  color: blue;
+}
+
+.email{
+  color: white;
+}
+
+.img-circle{
+  height: 128px;
+  width: 128px;
+}
+
+.mini-chat{
+  .conversation{
+    height: 550px;
+    width: 500px;
+    border-style: solid;
+    border-color: lightgray;
+    background-color: ghostwhite;
+    .conversation-messages{
+      //padding-top: 8px;
+      //margin-top: 14px;
+      height: 400px;
+      width: 450px;
+      overflow: scroll;
+      //overflow-wrap: normal;
+      overflow-x: hidden;
+      overflow-y: visible;
+      border-style: solid;
+      border-color: lightgray;
+      background-color: aliceblue;
+      .row{
+        padding-left: 5px;
+      }
+    }
+    .messages{
+      width: 450px;
+      //border-style: solid;
+      //border-color: royalblue;
+      textarea{
+      }
+    }
+
+  }
+}

@@ -1,0 +1,14 @@
+/<% provide(:title, 'All users') %>
+%h1 All categories
+
+%ul
+  - @categories.each do |category|
+    .categories
+      .col-md-10.cal-offset-1
+        = link_to category.name, category_path(category), {class: "btn btn-default btn-lg btn-block"}
+      - unless category.users.include?(current_user)
+        .col-md-1
+          = link_to "follow", create_relation_category_path(category), {class: "btn btn-default btn-lg btn-block", method: :post}
+      - else
+        .col-md-1
+          = link_to "unfollow", delete_relation_category_path(category), {class: "btn btn-default btn-lg btn-block", method: :delete}

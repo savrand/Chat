@@ -1,0 +1,7 @@
+%h1
+  = Conversation
+  = @conversation.id
+.conversation{'data-conversation': @conversation.id}
+  .conversation-messages
+    = render @messages
+  = render 'messages/form'

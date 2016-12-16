@@ -1,0 +1,5 @@
+= form_for @picture, {multipart: true} do |form|
+  = form.file_field :location
+  = form.hidden_field(:category_id, value: @category.id)
+  = form.text_field :description
+  = form.submit "upload", method: :put

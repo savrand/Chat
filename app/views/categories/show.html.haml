@@ -1,0 +1,11 @@
+/<% provide(:title, 'All users') %>
+%h1
+  = @category.name
+.picture
+  .row
+    .col-md-10.col-md-push-1
+      = paginate @pictures
+      %ul
+        - @pictures.each do |picture|
+          = link_to image_tag(picture.location_url, class: "img-circle"), category_picture_path(picture.category, picture)
+= render "pictures/upload"

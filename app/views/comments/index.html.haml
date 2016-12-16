@@ -1,0 +1,10 @@
+%h1 Comments
+%h2
+  %ul
+    - @comments.each do |comment|
+      .row
+        .col-md-2.col-md-offset-1
+          .user_mail
+            = comment.user.email + ": "
+        .col-md-5.col-md-offset-1
+          = comment.content

@@ -1,0 +1,12 @@
+/<% provide(:title, 'All users') %>
+%h1 picture
+
+%div{class: 'picture', data: @picture.id}
+  = image_tag(@picture.location_url)
+  = render 'likes/form'
+  %section
+    = render 'comments/form'
+  %ul{class: "comments"}
+    - @comments.each do |comment|
+      %li
+        = comment.user.email + ": " + comment.content

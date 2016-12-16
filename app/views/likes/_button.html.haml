@@ -1,0 +1,9 @@
+-#%like
+  -#= button_to "like", picture_likes_path(@picture), method: :post, class: "like_button"
+
+- if @like
+  %section
+    = button_to "unlike", picture_like_path(@picture, @like), method: :delete, class: "like_button"
+- else
+  %section
+    = button_to "like", picture_likes_path(@picture), method: :post, class: "like_button"

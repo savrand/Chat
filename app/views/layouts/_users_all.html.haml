@@ -1,0 +1,19 @@
+.users_all
+  %ul{class: "nav pull-left navbar-nav"}
+    - @users_all.each do |user|
+      .row
+        %li
+          = user.email
+
+  -#.dropup
+    %button{class: "btn btn-default dropdown-toggle",type: "button", id: "dropleftMenu",
+    'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false"}
+      UserList
+      %span{class: "caret"}
+    %ul{class: 'dropdown-menu dropdown-menu-left', 'aria-labelledby': 'dropleftMenu'}
+      %li
+        %p 1
+      %li
+        %p 2
+    -# @users_all.each do |user|
+

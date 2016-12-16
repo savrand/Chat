@@ -1,0 +1,8 @@
+$("#picture_show").html("<%= escape_javascript(render('pictures')) %>");
+$('.nav-tabs > li').each(function(i) {
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+  }else{
+    $(this).addClass('active');
+  }
+});

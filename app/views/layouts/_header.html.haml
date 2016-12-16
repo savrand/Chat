@@ -1,0 +1,32 @@
+%header{class: "navbar navbar-fixed-top navbar-inverse"}
+  %h5
+    .navbar-inner
+      %nav
+        %ul{class: "nav pull-left"}
+          - if user_signed_in?
+            %li
+              = link_to t("categories"), categories_path
+            %li
+              = link_to t("pictures"), root_path
+            %li
+              = link_to t("comments"), comments_index_path
+            %li
+              = link_to t("events"), events_index_path
+            %li
+              = link_to t("chat"), messages_path
+        %ul{class: "nav pull-right"}
+          %li
+            = link_to "en", url_for(locale: :en)
+          %li
+            = link_to "ru", url_for(locale: :ru)
+          - if user_signed_in?
+            %li
+              .email
+                = current_user.email
+            %li
+              = link_to "Sign out", destroy_user_session_path
+          - else
+            %li
+              = link_to "Sign in", new_user_session_path
+            %li
+              = link_to "Sign up", new_user_registration_path

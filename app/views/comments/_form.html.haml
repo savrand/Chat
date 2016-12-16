@@ -1,0 +1,5 @@
+- if user_signed_in?
+  = form_for [@picture, @comment] do |form|
+    .comment
+      = form.text_area :content, class: "comment_content"
+      = form.submit "Comment", class: "comment_button"
