@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :delete_relation, :create_relation]
+  before_action :set_new_category, only: [:create]
 
   def index
     @categories = Category.all.preload(:users)#.order("name")
@@ -17,6 +18,11 @@ class CategoriesController < ApplicationController
     @picture = @category.pictures.build
   end
 
+  def create
+    Category.create!(set_new_category)
+    redirect_to :back
+  end
+
   def delete_relation
     current_user.unfollow_category!(@category)
     redirect_to :back
@@ -32,4 +38,7 @@ class CategoriesController < ApplicationController
       @category = Category.find_by(name: params[:id])
     end
 
+    def set_new_category
+      params.require(:category).permit(:name,:description)
+    end
 end

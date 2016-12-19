@@ -20,8 +20,13 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = current_user.pictures.build(get_picture)
-    @picture.save!
+    pictures = params[:picture][:location]
+    pictures_params = get_picture
+    pictures.each do |location|
+      @picture = current_user.pictures.create(description: pictures_params[:description],
+                                             category_id: pictures_params[:category_id],
+                                              location: location)
+    end
     # if @picture.save!
     #   @picture.category.users.each do |user|
     #     UserMailer.add_picture_notification(user, @picture).deliver_later
