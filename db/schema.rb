@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214084158) do
+ActiveRecord::Schema.define(version: 20161219114231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,7 +90,6 @@ ActiveRecord::Schema.define(version: 20161214084158) do
     t.integer  "category_id"
     t.integer  "likes_count", default: 0
     t.string   "slug"
-    t.index ["location"], name: "index_pictures_on_location", unique: true, using: :btree
     t.index ["slug"], name: "index_pictures_on_slug", unique: true, using: :btree
   end
 

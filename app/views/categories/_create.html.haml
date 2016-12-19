@@ -1,0 +1,7 @@
+.new-category.col-md-12
+  = form_for [Category.new] do |category|
+    %p Name
+    = category.text_field :name
+    %p Description
+    = category.text_field :description
+    = category.submit "Create Category"
