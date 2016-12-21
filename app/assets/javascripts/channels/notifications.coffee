@@ -47,7 +47,10 @@ $(document).ready ->
     )
     $("body").on("click", ".hide-chat-btn", (e) ->
       e.preventDefault()
-
+      if $('.user-list').is(":visible")
+        $('.user-list').hide('fast')
+      else
+        $('.user-list').show('fast')
     )
 
 
