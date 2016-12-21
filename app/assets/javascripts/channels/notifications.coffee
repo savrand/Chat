@@ -45,5 +45,11 @@ $(document).ready ->
       console.log "опа"
       return false
     )
+    $("body").on("click", ".hide-chat-btn", (e) ->
+      e.preventDefault()
+
+    )
+
+
 
 

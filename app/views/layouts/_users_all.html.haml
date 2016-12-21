@@ -1,19 +1,7 @@
-.users_all
-  %ul{class: "nav pull-left navbar-nav"}
-    - @users_all.each do |user|
-      .row
+.users_all.col-md-12
+  .user-list
+    %ul{class: "left-panel nav  nav-pills nav-stacked pull-left"}
+      - @users_all.each do |user|
         %li
-          = user.email
-
-  -#.dropup
-    %button{class: "btn btn-default dropdown-toggle",type: "button", id: "dropleftMenu",
-    'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false"}
-      UserList
-      %span{class: "caret"}
-    %ul{class: 'dropdown-menu dropdown-menu-left', 'aria-labelledby': 'dropleftMenu'}
-      %li
-        %p 1
-      %li
-        %p 2
-    -# @users_all.each do |user|
-
+          = link_to user.email, conversations_path(user_id: user.id), {method: :post}
+  %button.hide-chat-btn.glyphicon.glyphicon-menu-right

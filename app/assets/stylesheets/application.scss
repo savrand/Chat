@@ -67,6 +67,38 @@ h1 {
   height: 128px;
   width: 128px;
 }
+.users_all{
+  .navbar {
+    background-color: #3a2665;
+    color: #ffffff;
+  }
+  .nav {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    li {
+      a {
+        font-size: small;
+      }
+    }
+  }
+  //min-width: 2vw;
+  //width: 4vw;
+  .user-list{
+    height:100vh;
+    //visibility: hidden;
+    //width: 0px;
+  }
+  .left-panel{
+    right: auto;
+    left: auto;
+  }
+  .hide-chat-btn{
+    height: 100vh;
+    width: 1vw;
+    display:block;
+    text-align:center
+  }
+}
 
 .mini-chat{
   .conversation{
