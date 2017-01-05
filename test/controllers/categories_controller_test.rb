@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'rails_helper'
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
